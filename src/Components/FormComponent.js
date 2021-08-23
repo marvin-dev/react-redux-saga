@@ -1,22 +1,28 @@
 import React from "react";
 import { Form } from "semantic-ui-react";
-export default function FormComponent() {
-  return (
-    <Form.Group>
-      <Form.Input
-        icon="tags"
-        width={12}
-        label="Description"
-        placeholder="New shinny thing"
-      />
+import ButtonComponent from "./ButtonComponent";
+import EditForm from "./EditForm";
 
-      <Form.Input
-        width={4}
-        label="Value"
-        placeholder="100.00"
-        icon="dollar"
-        iconPosition="left"
+export default function FormComponent({
+  addTransaction,
+  description,
+  value,
+  isExpense,
+  setvalue,
+  setdescription,
+  setisExpense,
+}) {
+  return (
+    <Form unstackable>
+      <EditForm
+        isExpense={isExpense}
+        description={description}
+        value={value}
+        setvalue={setvalue}
+        setdescription={setdescription}
+        setisExpense={setisExpense}
       />
-    </Form.Group>
+      <ButtonComponent addTransaction={addTransaction} />
+    </Form>
   );
 }

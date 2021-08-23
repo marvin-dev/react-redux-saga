@@ -1,23 +1,22 @@
 import React from "react";
-import { Segment, Grid, Icon } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
+import Transaction from "./Transaction";
 
 export default function Transactions({
-  description,
-  value,
-  isExpense = false,
+  transactions,
+  deleteTransaction,
+  editTransaction,
 }) {
   return (
-    <Segment color={isExpense === true ? "red" : "green"}>
-      <Grid columns="3" textAlign="right">
-        <Grid.Row>
-          <Grid.Column textAlign="left">{description}</Grid.Column>
-          <Grid.Column>{value}</Grid.Column>
-          <Grid.Column>
-            <Icon name="edit" bordered />
-            <Icon name="trash" />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <Container>
+      {transactions.map((trans) => (
+        <Transaction
+          key={trans.id}
+          {...trans}
+          editTransaction={editTransaction}
+          deleteTransaction={deleteTransaction}
+        />
+      ))}
+    </Container>
   );
 }

@@ -2,16 +2,19 @@ import React from "react";
 import { Form } from "semantic-ui-react";
 import ButtonComponent from "./ButtonComponent";
 import EditForm from "./EditForm";
+import userEntryDetails from "../hooks/userEntryDetails";
 
-export default function FormComponent({
-  addTransaction,
-  description,
-  value,
-  isExpense,
-  setvalue,
-  setdescription,
-  setisExpense,
-}) {
+export default function FormComponent() {
+  const {
+    description,
+    setdescription,
+    value,
+    setvalue,
+    isExpense,
+    setisExpense,
+    addTransaction,
+  } = userEntryDetails();
+
   return (
     <Form unstackable>
       <EditForm
@@ -22,7 +25,7 @@ export default function FormComponent({
         setdescription={setdescription}
         setisExpense={setisExpense}
       />
-      <ButtonComponent addTransaction={addTransaction} />
+      <ButtonComponent addEntry={addTransaction} />
     </Form>
   );
 }

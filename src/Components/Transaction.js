@@ -1,14 +1,16 @@
 import React from "react";
 import { Segment, Grid, Icon } from "semantic-ui-react";
+import { useDispatch } from "react-redux";
+import { deleteEntry } from "../actions/entries.action";
+import { openEditModal } from "../actions/modals.action";
 
 export default function Transaction({
   id,
   description,
   value,
   isExpense = false,
-  deleteTransaction,
-  editTransaction,
 }) {
+  const dispatch = useDispatch();
   return (
     <>
       <Segment color={isExpense === true ? "red" : "green"}>
@@ -17,8 +19,12 @@ export default function Transaction({
             <Grid.Column textAlign="left">{description}</Grid.Column>
             <Grid.Column>{value}</Grid.Column>
             <Grid.Column>
-              <Icon name="edit" bordered onClick={() => editTransaction(id)} />
-              <Icon name="trash" onClick={() => deleteTransaction(id)} />
+              <Icon
+                name="edit"
+                bordered
+                onClick={() => dispatch(openEditModal(id))}
+              />
+              <Icon name="trash" onClick={() => dispatch(deleteEntry(id))} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

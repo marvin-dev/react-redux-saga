@@ -1,0 +1,8 @@
+export const ADD_ENTRY = "ADD_ENTRY";
+export const REMOVE_ENTRY = "REMOVE_ENTRY";
+export const UPDATE_ENTRY = "UPDATE_ENTRY";
+export const OPEN_EDIT_MODAL = "OPEN_EDIT_MODAL";
+export const CLOSE_EDIT_MODAL = "CLOSE_EDIT_MODAL";
+export const GET_ENTRIES = "GET_ENTRIES";
+export const FETCH_ENTRIES = "FETCH_ENTRIES";
+export const ADD_TRANSACTION = "ADD_TRANSACTION";

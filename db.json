@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "description": "Freelancing income",
+      "value": 40000,
+      "isExpense": false
+    },
+    {
+      "id": 2,
+      "description": "iPhone Payment",
+      "value": 5000,
+      "isExpense": true
+    },
+    {
+      "id": 4,
+      "description": "Monthly contribution",
+      "value": 5000,
+      "isExpense": true
+    },
+    {
+      "id": 5,
+      "description": "Maintenance",
+      "value": 3000,
+      "isExpense": true
+    },
+    {
+      "id": 12,
+      "description": "Sideline",
+      "value": 10000,
+      "isExpense": false
+    },
+    {
+      "id": "3108c913-b59b-4b26-8aa9-83cd057063ad",
+      "description": "asd",
+      "value": "7567",
+      "isExpense": true
+    }
+  ]
+}
